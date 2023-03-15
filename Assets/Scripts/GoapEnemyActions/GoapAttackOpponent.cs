@@ -17,6 +17,7 @@ namespace GoapEnemyActions
         private bool hitOpponent = false;
         public float maxDistance = 3f;
         private OpponentComponent opponentTarget;
+        private OpponentComponent defender;
        
         private GoapEnemyAI goapEnemyAI;
 
@@ -26,6 +27,7 @@ namespace GoapEnemyActions
         {
             layerMask = ~layerMask;
             goapEnemyAI = GetComponent<GoapEnemyAI>();
+            defender = GetComponent<OpponentComponent>();
             if (goapEnemyAI == null)
             {
                 Debug.Log("Must attach this to a valid GoapEnemyAI type");
@@ -123,6 +125,7 @@ namespace GoapEnemyActions
 
         public override bool perform(GameObject agent)
         {
+            if (defender.Health <= 0) return true;
             if (startTime == 0)
             {
                 startTime = Time.time;
@@ -145,9 +148,9 @@ namespace GoapEnemyActions
                     if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, maxDistance, layerMask))
                     {
                         Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
-                        //Debug.Log(string.Format( "<color=blue>Attacking:</color> Did Hit {0} with damage {1}",opponentTarget.Health, goapEnemyAI.backpack.weopon.damage ));
+                        Debug.Log(string.Format( "<color=blue>Attacking:</color> Did Hit {0} with damage {1}",opponentTarget.Health, goapEnemyAI.backpack.weopon.damage ));
                         opponentTarget.Health -= goapEnemyAI.backpack.weopon.damage;
-                        startTime = 0;
+                        startTime = Time.time; //0;
                        // hitOpponent = true;
                     }
                     else

@@ -1,8 +1,6 @@
 {
-  "process_id": 31330,
-  "version": "2019.2.19f1",
-  "app_path": "/Applications/Unity/Hub/Editor/2019.2.19f1/Unity.app",
-  "app_contents_path": "/Applications/Unity/Hub/Editor/2019.2.19f1/Unity.app/Contents",
-  "attach_allowed": "True",
-  "is_loaded_from_assets": "True"
+	"process_id" : 24533,
+	"version" : "2021.3.17f1",
+	"app_path" : "/Applications/Unity/Hub/Editor/2021.3.17f1/Unity.app",
+	"app_contents_path" : "/Applications/Unity/Hub/Editor/2021.3.17f1/Unity.app/Contents"
 }
