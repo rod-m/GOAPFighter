@@ -97,7 +97,7 @@ namespace GoapEnemy
         public void actionsFinished()
         {
             // Everything is done, we completed our actions for this gool. Hooray!
-            Debug.Log("<color=blue>Actions completed</color>");
+            Debug.Log("<color=yellow>Actions completed</color>");
         }
 
         public void planAborted(GoapAction aborter)

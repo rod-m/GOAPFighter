@@ -99,6 +99,7 @@ namespace GoapEnemyActions
 
         public override bool perform(GameObject agent)
         {
+            
             if (startTime == 0)
                 startTime = Time.time;
 
