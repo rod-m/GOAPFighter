@@ -125,7 +125,7 @@ namespace GoapEnemyActions
 
         public override bool perform(GameObject agent)
         {
-            if (defender.Health <= 0) return true;
+            if (defender.Health <= 0) return true; // i died so cant carry on attcking
             if (startTime == 0)
             {
                 startTime = Time.time;
@@ -150,7 +150,7 @@ namespace GoapEnemyActions
                         Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
                         Debug.Log(string.Format( "<color=blue>Attacking:</color> Did Hit {0} with damage {1}",opponentTarget.Health, goapEnemyAI.backpack.weopon.damage ));
                         opponentTarget.Health -= goapEnemyAI.backpack.weopon.damage;
-                        startTime = Time.time; //0;
+                        startTime = 0;
                        // hitOpponent = true;
                     }
                     else
