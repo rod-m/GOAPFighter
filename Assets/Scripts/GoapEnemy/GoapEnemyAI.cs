@@ -71,6 +71,8 @@ namespace GoapEnemy
             bool defenceMove = opponentMe.attacker != null && opponentMe.healthPercent < 50.0f;
             worldData.Add(
                 new KeyValuePair<string, object>("defenceMove", defenceMove));
+            worldData.Add(
+                new KeyValuePair<string, object>("ammo", backpack.ammo));
             return worldData;
         }
 
@@ -134,6 +136,7 @@ namespace GoapEnemy
             else
             {
                 Debug.Log(string.Format("No Path found to {0}",nextAction.gameObject.name ));
+                return false;
             }
             
             

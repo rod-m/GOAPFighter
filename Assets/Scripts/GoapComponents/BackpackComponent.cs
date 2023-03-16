@@ -12,7 +12,7 @@ namespace GoapComponents
        // public WeoponSupplyComponent weoponSupplyComponent;
 
         public Weopon weopon = new Weopon();
-        
+        public int ammo = 0;
         private void Awake()
         {
             

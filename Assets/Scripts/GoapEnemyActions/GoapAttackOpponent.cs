@@ -40,8 +40,9 @@ namespace GoapEnemyActions
         {
             addPrecondition("hasWeopon", true);
             addPrecondition("hasOpponent", true);
-            addPrecondition("defenceMove", false);
+            //addPrecondition("defenceMove", false);
            addEffect("patrol", true);
+           addEffect("hasOpponent", false);
       
         }
 
@@ -109,8 +110,8 @@ namespace GoapEnemyActions
 
             if (closest == null)
             {
-               // Debug.Log("<color=red>NO TARGET:</color> " + agent.gameObject.name);
-                return false;
+               Debug.Log("<color=red>NO TARGET:</color> " + agent.gameObject.name);
+                return true;
             }
 
             //startTime = 0;

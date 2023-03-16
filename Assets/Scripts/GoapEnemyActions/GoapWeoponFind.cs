@@ -15,8 +15,8 @@ namespace GoapEnemyActions
         public GoapWeoponFind()
         {
             addPrecondition("hasWeopon", false);
-            addEffect("hasWeopon", true);
-
+            //addEffect("hasWeopon", true);
+            addEffect("patrol", true);
         }
 
    
@@ -34,6 +34,7 @@ namespace GoapEnemyActions
         public override bool checkProceduralPrecondition(GameObject agent)
         {
             if (backpack == null) backpack = agent.GetComponent<BackpackComponent>();
+            if (backpack.weopon.weoponType != WeoponType.None) return true;
             // find the nearest supply pile that has spare logs
             WeoponSupplyComponent[] weoponSupplySpply 
                 = (WeoponSupplyComponent[])
@@ -66,8 +67,8 @@ namespace GoapEnemyActions
             if (closest == null)
             {
                 // no more guns - use melleee
-                backpack.weopon.weoponType = WeoponType.Melee;
-                backpack.weopon.damage = 10;
+                //backpack.weopon.weoponType = WeoponType.Melee;
+                //backpack.weopon.damage = 1;
                 return false;
             }
              
@@ -95,11 +96,14 @@ namespace GoapEnemyActions
                     backpack.weopon.weoponType = targetWeoponSupply.weoponType;
                     backpack.weopon.damage = targetWeoponSupply.damage;
                     gotWeopon = true;
-                    return true;
+                    //return true;
                 }
                 else
                 {    
+                    gotWeopon = false;
                     Debug.Log(string.Format("no weopons here! Someone got there first! {0}" , agent.name));
+                    //Destroy(targetWeoponSupply.gameObject);
+                    targetWeoponSupply.gameObject.SetActive(false);
                     return false; // no weopons here! Someone got there first!
                 }
             }

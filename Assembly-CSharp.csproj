@@ -43,6 +43,7 @@
   <ItemGroup>
      <Compile Include="Assets/Scripts/GoapAI/FSM/FSMState.cs" />
      <Compile Include="Assets/Scripts/GoapAI/GOAP/Node.cs" />
+     <Compile Include="Assets/Scripts/GoapComponents/ammoPickupComponent.cs" />
      <Compile Include="Assets/Scripts/GoapAI/GOAP/GoapAgent.cs" />
      <Compile Include="Assets/Scripts/GoapEnemyActions/GoapDodgeOpponent.cs" />
      <Compile Include="Assets/Scripts/GoapComponents/BackpackComponent.cs" />

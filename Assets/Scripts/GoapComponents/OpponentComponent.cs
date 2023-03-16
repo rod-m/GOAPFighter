@@ -56,7 +56,7 @@ namespace GoapComponents
 
                         //Call SetColor using the shader property name "_Color" and setting the color to red
                         cubeRenderer.material.SetColor("_Color", Color.red);
-                        Destroy(gameObject, 3f);
+                        Destroy(gameObject, 2f);
                     }
 
                     IamUnderFire = null;
